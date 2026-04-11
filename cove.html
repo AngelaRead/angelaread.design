@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cove — Angela Read</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-name">Angela Read</a>
+      <p class="site-tagline">Design Technologist &nbsp;·&nbsp; Design Engineer &nbsp;·&nbsp; Product Designer &nbsp;·&nbsp;Seattle, WA</p>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
+
+    <a href="index.html?tab=ux" class="back-link">&#8592; Back to portfolio</a>
+
+    <div class="project-hero"><img src="images/cove/cove_hero_image.jpg" alt="hero image"></div>
+
+    <div class="project-header">
+      <span class="project-tag">Security UX &nbsp;·&nbsp; UX Case Study</span>
+      <h1 class="project-title">Cove</h1>
+      <p class="project-summary">
+        Making personal security legible — a tool that transforms breach data into clear,
+        actionable protection for everyday users.
+      </p>
+    </div>
+
+    <div class="project-meta">
+      <div class="meta-item">
+        <span class="meta-label">My Role</span>
+        <span class="meta-value">UX Researcher &amp; Designer</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Timeline</span>
+        <span class="meta-value">January — April 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Tools</span>
+        <span class="meta-value">Figma, Miro, Notion</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Type</span>
+        <span class="meta-value">Dashboard / Web App</span>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h3>The Problem</h3>
+      <p>Most people discover they have been breached by accident. When companies do send notifications they arrive as legal documents with no plain language, no prioritized next step, and no empathy for the person receiving them. Meanwhile the tools that could protect users — strong passwords, two-factor authentication, breach monitoring — are buried in settings and almost never introduced during onboarding. Security is treated as an afterthought rather than a core product experience..</p>
+    </div>
+
+    <div class="project-section">
+      <h3>Research</h3>
+      <p>
+        I conducted primary research through my own security setup journey, discovering compromised accounts via haveibeenpwned, configuring 1Password, and analyzing network traffic with Proxyman. Secondary research included:
+      </p>
+      <ul>
+        <li>Reddit threads from r/privacy documenting real user breach experiences</li>
+        <li>PayPal and Navia breach notification articles analyzed for plain language failures</li>
+        <li>Verizon DBIR 2025 and IBM Cost of a Data Breach 2025</li>
+        <li>Academic papers on 2FA usability and password manager onboarding</li>
+        <li>Competitive analysis of Amazon, Target, and ASOS, all of which share the same core failures</li>
+      </ul>
+      <div class="project-img"><img src="images/cove/haveibeenpwned.png" alt="research"></div>
+      <p class="hint">haveibeenpwned.com showing multiple compromised accounts with no prioritization and no guidance on what to do next.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>Key Insights</h3>
+      <ul>
+        <li>Users do not fail at security because they do not care. They fail because security UX is designed to be ignored</li>
+        <li>Breach notifications are written for legal compliance, not for the person receiving them</li>
+        <li>2FA is buried, inconsistently labeled, and almost never introduced during onboarding</li>
+        <li>MFA fatigue is a direct result of push notifications that provide no context. Users approve suspicious logins just to make the alerts stop</li>
+        <li>Security shame is a design failure, not a user failure</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>Design Process</h3>
+      <p>I mapped the current state experience of a non-technical retail shopper across eight journey stages, from account creation through breach discovery and recovery. The most painful moment was not the breach itself but the moment the user realizes they have no idea what to do next and no one is helping them. That insight directly shaped every screen in the solution.</p>
+      <div class="journey-map-wrapper">
+        <div class="journey-map-scroll"><img src="images/cove/cove_map_journey.jpg" alt="map journey"></div>
+      </div>  
+      </div>
+
+    <div class="project-section">
+      <h3>Solution</h3>
+      <p><strong>Screen 1 — Onboarding security setup</strong> 2FA is introduced as step two of three during account creation, not buried in settings. Each option is explained in plain language with a recommended badge on the most secure choice.</p>
+      <p><strong>Screen 2 — Account home security score</strong> A security health score from zero to one hundred is visible every time the user opens their account. Three status cards show breach status, password health, and 2FA status at a glance.</p>
+      <p><strong>Screen 3 — Breach notification</strong> Plain language replaces legal boilerplate. The notification names exactly what was exposed, explains what it means in one sentence, and offers two clear prioritized actions.</p>
+      <p><strong>Screen 4 — Breach detail</strong> Recovery is presented as a numbered sequence, one step at a time. Steps two and three are locked until step one is complete, preventing overwhelm.</p>
+      <P><strong>Screen 5 — Password health</strong> Reused and compromised passwords are surfaced with an overall health score and update buttons prioritized by severity. The compromised password always appears first.</P>
+      <p><strong>Screen 6 — 2FA setup</strong> Three options with plain language explanations and a clear recommendation. One tap to set up the recommended choice.</p>
+      <p><strong>Screen 7 — 2FA notification</strong> Full context is shown including location, device, time, and IP address, with equal visual weight on approve and deny. This directly solves MFA fatigue.</p>
+      <p><strong>Screen 8 — Account recovery</strong> A four step guided recovery process where only the current step is active. A human support card promises a real person within two hours.</p>
+    <div class="project-lo-fi">
+      <h4>Lo-Fi Wireframes</h4>
+      <div class="img-four">
+        <div class="project-screen"><img src="images/cove/lo_fi_wireframes/lo_fi_screen_1.jpg"></div>
+        <div class="project-screen"><img src="images/cove/lo_fi_wireframes/lo_fi_screen_2.jpg"></div>
+        <div class="project-screen"><img src="images/cove/lo_fi_wireframes/lo_fi_screen_3.jpg"></div>
+        <div class="project-screen"><img src="images/cove/lo_fi_wireframes/lo_fi_screen_4.jpg"></div>
+      </div>
+      <div class="img-four">
+        <div class="caption">Screen 1</div>
+        <div class="caption">Screen 2</div>
+        <div class="caption">Screen 3</div>
+        <div class="caption">Screen 4</div>
+      </div>
+      <div class="img-four">
+        <div class="project-screen"><img src="images/cove/lo_fi_wireframes/lo_fi_screen_5.jpg"></div>
+        <div class="project-screen"><img src="images/cove/lo_fi_wireframes/lo_fi_screen_6.jpg"></div>
+        <div class="project-screen"><img src="images/cove/lo_fi_wireframes/lo_fi_screen_7.jpg"></div>
+        <div class="project-screen"><img src="images/cove/lo_fi_wireframes/lo_fi_screen_8.jpg"></div>
+      </div>
+      <div class="img-four">
+        <div class="caption">Screen 5</div>
+        <div class="caption">Screen 6</div>
+        <div class="caption">Screen 7</div>
+        <div class="caption">Screen 8</div>
+      </div>
+    </div>    
+    <div class="project-mid-fi">
+      <h4>Mid-Fi Wireframes</h4>
+      <div class="img-four">
+        <div class="project-screen"><img src="images/cove/mid_fi_wireframes/mid_fi_screen_1.jpg"></div>
+        <div class="project-screen"><img src="images/cove/mid_fi_wireframes/mid_fi_screen_2.jpg"></div>
+        <div class="project-screen"><img src="images/cove/mid_fi_wireframes/mid_fi_screen_3.jpg"></div>
+        <div class="project-screen"><img src="images/cove/mid_fi_wireframes/mid_fi_screen_4.jpg"></div>
+      </div>
+      <div class="img-four">
+        <div class="caption">Screen 1</div>
+        <div class="caption">Screen 2</div>
+        <div class="caption">Screen 3</div>
+        <div class="caption">Screen 4</div>
+      </div>
+      <div class="img-four">
+        <div class="project-screen"><img src="images/cove/mid_fi_wireframes/mid_fi_screen_5.jpg"></div>
+        <div class="project-screen"><img src="images/cove/mid_fi_wireframes/mid_fi_screen_6.jpg"></div>
+        <div class="project-screen"><img src="images/cove/mid_fi_wireframes/mid_fi_screen_7.jpg"></div>
+        <div class="project-screen"><img src="images/cove/mid_fi_wireframes/mid_fi_screen_8.jpg"></div>
+      </div>
+      <div class="img-four">
+        <div class="caption">Screen 5</div>
+        <div class="caption">Screen 6</div>
+        <div class="caption">Screen 7</div>
+        <div class="caption">Screen 8</div>
+      </div>
+    </div>
+    <div class="prototype">
+      <h4>Prototype</h4>
+        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="875" height="1000" src="https://embed.figma.com/proto/wOzN5WFrCC4DZKhCN9zoMn/Cove---Retail-App-Security?node-id=96-10888&p=f&viewport=-803%2C81%2C1.02&scaling=min-zoom&content-scaling=fixed&page-id=4%3A3&embed-host=share" allowfullscreen></iframe>
+    </div>
+
+
+    <div class="project-section">
+      <h3>Outcome &amp; Reflection</h3>
+      <p>Cove demonstrates that security UX is a design problem, not a technical one. Plain language, visible security health, and 2FA introduced during onboarding are not engineering challenges. They are design decisions that most products simply have not made.</p>
+      <p>If I were to continue developing Cove I would test the onboarding security setup screen with non-technical users to measure 2FA completion rates and use Microsoft Clarity to identify drop-off points in the breach recovery flow.</p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Angela Read</p>
+    </div>
+  </footer>
+
+</body>
+</html>

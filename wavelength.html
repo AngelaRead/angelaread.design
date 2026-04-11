@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wavelength — Angela Read</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-name">Angela Read</a>
+      <p class="site-tagline">Design Technologist &nbsp;·&nbsp; Design Engineer &nbsp;·&nbsp; Product Designer &nbsp;·&nbsp;Seattle, WA</p>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
+
+    <!-- Back to portfolio -->
+    <a href="index.html?tab=ux" class="back-link">&#8592; Back to portfolio</a>
+
+    <div class="project-hero"><img src="images/wavelength/wavelength_hero_image.jpg" alt="hero image"></div>
+
+    <!-- Project header -->
+    <div class="project-header">
+      <span class="project-tag">Accessibility &nbsp;·&nbsp; UX Case Study</span>
+      <h1 class="project-title">Wavelength</h1>
+      <p class="project-summary">
+        Redesigning the hearing health experience — from discovery to daily support —
+        for people navigating hearing difference.
+      </p>
+    </div>
+
+    <!-- Meta row -->
+    <div class="project-meta">
+      <div class="meta-item">
+        <span class="meta-label">My Role</span>
+        <span class="meta-value">UX Researcher &amp; Designer</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Timeline</span>
+        <span class="meta-value">January — April 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Tools</span>
+        <span class="meta-value">Figma, Miro, Notion</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Type</span>
+        <span class="meta-value">Mobile App</span>
+      </div>
+    </div>
+
+    <!-- ── SECTION: Problem ── -->
+    <div class="project-section">
+      <h3>The Problem</h3>
+      <p>Music is one of the most universal human experiences, yet for deaf and hard of hearing listeners it has always been partially inaccessible. Lyrics are missing from entire albums with no explanation. When lyrics do exist they highlight one line at a time, making it impossible to follow which specific word is being sung. There is no visual expression of volume, rhythm, or emotional dynamics. Accessibility settings are buried in system menus rather than built into the app itself. And the one sensory connection that is genuinely available to deaf listeners — feeling bass vibration through a phone — has never been intentionally designed. It is an accident, not a feature.</p>
+      <p>Wavelength is a fictional music app designed to show what music accessibility looks like when deaf and hard of hearing users are treated as the primary audience rather than an afterthought.</p>
+    </div>
+
+    <!-- ── SECTION: Research ── -->
+    <div class="project-section">
+      <h3>Research</h3>
+      <p>I drew on my own lived experience as a deaf user as the primary research source, combined with extensive community and academic research. Secondary research included:</p>
+      <ul>
+        <li>Community research from r/deaf and r/hardofhearing documenting real user frustrations with music apps</li>
+        <li>Asphyxia's YouTube video on deaf music experience reviewed in full transcript</li>
+        <li>A fhstheflash.com article quoting a community member describing inaccessible lyrics as "incredibly ableist"</li>
+        <li>Spotify community forum threads documenting missing lyrics complaints</li>
+        <li>Three academic papers covering deaf music experience, captioning design, and accessibility in streaming platforms</li>
+        <li>Competitive analysis of Amplio and Moises, both of which have accidental rather than intentional accessibility features</li>
+      </ul>
+      <div class="img-pair">
+      <div class="project-img"><img src="images/wavelength/lyrics.png" alt="research" style="width: 100%; height: 270px; object-fit: cover;"></div>
+      <div class="project-img"><img src="images/wavelength/no_lyrics.png" alt="research" style="width: 100%; height: 270px; object-fit: cover;"></div>
+      <p class="hint">Spotify lyrics view showing line by line highlighting — no word by word precision for deaf or hard of hearing listeners.</p>
+      <p class="hint">Spotify album page showing songs with no lyrics available — no explanation, no request option, and no path forward.</p>
+      </div>
+    </div>
+
+    <!-- ── SECTION: Key Insights ── -->
+    <div class="project-section">
+      <h3>Key Insights</h3>
+      <ul>
+        <li>Deaf users are not passive listeners. They actively seek music experiences and feel the exclusion acutely when apps fail them</li>
+        <li>Line by line lyric highlighting is not enough. Word by word precision is the minimum standard for a genuinely accessible experience</li>
+        <li>Missing lyrics are not a minor inconvenience. They break the shared social experience of listening to music with friends</li>
+        <li>The phone vibrates naturally with bass. No app has ever treated this as a designed feature rather than a side effect</li>
+        <li>Accessibility mode should be one tap from the home screen, not buried three menus deep in system settings</li>
+        <li>Captions and lyrics are perceived as a deaf feature but research shows they benefit hearing users too</li>
+      </ul>
+    </div>
+
+    <!-- ── SECTION: Design Process ── -->
+    <div class="project-section">
+      <h3>Design Process</h3>
+      <p>I mapped the current state experience of a deaf music listener across eight journey stages, from discovering music through to feeling it physically. The most revealing insight from the journey map was that the moment of exclusion is not discovering a song has no lyrics. It is being sent an album by a hearing friend, opening it, and finding half the songs inaccessible with no explanation and no path forward. That specific moment of social exclusion shaped the shared listening mode screen and the missing lyrics request flow.</p>
+      <div class="journey-map-wrapper">      
+        <div class="journey-map-scroll"><img src="images/wavelength/wavelength_map_journey.jpg" alt="map journey"></div>
+      </div>  
+      </div>
+
+    <!-- ── SECTION: Wireframes / Solution ── -->
+    <div class="project-section">
+      <h3>Solution</h3>
+      <p><strong>Screen 1 — Home screen with accessibility mode toggle</strong> A visible accessibility symbol on the home screen activates full deaf friendly mode in one tap. Every album card shows lyrics availability before the user commits to listening.</p>
+      <p><strong>Screen 2 — Album page with lyrics availability badges</strong> A lyrics completeness indicator shows how many songs on an album have lyrics before the user plays a single track. Songs without lyrics are visually distinct and include a request option inline.</p>
+      <p><strong>Screen 3 — Now playing with word by word lyrics</strong> Each word is highlighted individually in real time as it is sung. Previous lines fade above and upcoming lines appear below. Bass vibration is toggled directly from the now playing screen.</p>
+      <p><strong>Screen 4 — Motion responsive lyrics view</strong> Words grow with volume and pulse with beat. The current word is the largest and darkest element on screen. A visual rhythm waveform shows the beat independently of the lyrics.</p>
+      <p><strong>Screen 5 — Missing lyrics request flow</strong> Three options are available when lyrics are missing: request this song only, request the entire album at once, or contribute lyrics directly. An estimated timeline and a notify me toggle ensure the user is not left at a dead end.</p>
+      <p><strong>Screen 6 — Accessibility settings panel</strong> All accessibility controls are centralized in one panel accessible from the home screen. A master toggle activates everything at once. Individual controls for word by word highlighting, motion lyrics, bass vibration, tap haptics, and visual feedback can each be adjusted separately.</p>
+      <p><strong>Screen 7 — Bass vibration controls</strong> Bass vibration is treated as an intentional designed feature rather than an accidental side effect. Users control intensity from low to high and choose their preferred frequency range. A live waveform preview shows the rhythm visually while the phone vibrates in real time.</p>
+      <p><strong>Screen 8 — Shared listening mode</strong> When a friend shares an album, the shared listening screen shows accessibility status per song before anything plays. Songs with lyrics show both lyrics and vibration availability. Songs without lyrics show a request option inline. The gap between deaf and hearing listening experiences is made visible and actionable rather than invisible and frustrating.</p>
+    </div>
+    <div class="project-lo-fi">
+      <h4>Lo-Fi Wireframes</h4>
+      <div class="img-four">
+        <div class="project-screen"><img src="images/wavelength/lo_fi_wireframes/lo_fi_screen_1.jpg"></div>
+        <div class="project-screen"><img src="images/wavelength/lo_fi_wireframes/lo_fi_screen_2.jpg"></div>
+        <div class="project-screen"><img src="images/wavelength/lo_fi_wireframes/lo_fi_screen_3.jpg"></div>
+        <div class="project-screen"><img src="images/wavelength/lo_fi_wireframes/lo_fi_screen_4.jpg"></div>
+      </div>
+      <div class="img-four">
+        <div class="caption">Screen 1</div>
+        <div class="caption">Screen 2</div>
+        <div class="caption">Screen 3</div>
+        <div class="caption">Screen 4</div>
+      </div>
+      <div class="img-four">
+        <div class="project-screen"><img src="images/wavelength/lo_fi_wireframes/lo_fi_screen_5.jpg"></div>
+        <div class="project-screen"><img src="images/wavelength/lo_fi_wireframes/lo_fi_screen_6.jpg"></div>
+        <div class="project-screen"><img src="images/wavelength/lo_fi_wireframes/lo_fi_screen_7.jpg"></div>
+        <div class="project-screen"><img src="images/wavelength/lo_fi_wireframes/lo_fi_screen_8.jpg"></div>
+      </div>
+      <div class="img-four">
+        <div class="caption">Screen 5</div>
+        <div class="caption">Screen 6</div>
+        <div class="caption">Screen 7</div>
+        <div class="caption">Screen 8</div>
+      </div>
+    </div>    
+    <div class="project-mid-fi">
+      <h4>Mid-Fi Wireframes</h4>
+      <div class="img-four">
+        <div class="project-screen"><img src="images/wavelength/mid_fi_wireframes/mid_fi_screen_1.jpg"></div>
+        <div class="project-screen"><img src="images/wavelength/mid_fi_wireframes/mid_fi_screen_2.jpg"></div>
+        <div class="project-screen"><img src="images/wavelength/mid_fi_wireframes/mid_fi_screen_3.jpg"></div>
+        <div class="project-screen"><img src="images/wavelength/mid_fi_wireframes/mid_fi_screen_4.jpg"></div>
+      </div>
+      <div class="img-four">
+        <div class="caption">Screen 1</div>
+        <div class="caption">Screen 2</div>
+        <div class="caption">Screen 3</div>
+        <div class="caption">Screen 4</div>
+      </div>
+      <div class="img-four">
+        <div class="project-screen"><img src="images/wavelength/mid_fi_wireframes/mid_fi_screen_5.jpg"></div>
+        <div class="project-screen"><img src="images/wavelength/mid_fi_wireframes/mid_fi_screen_6.jpg"></div>
+        <div class="project-screen"><img src="images/wavelength/mid_fi_wireframes/mid_fi_screen_7.jpg"></div>
+        <div class="project-screen"><img src="images/wavelength/mid_fi_wireframes/mid_fi_screen_8.jpg"></div>
+      </div>
+      <div class="img-four">
+        <div class="caption">Screen 5</div>
+        <div class="caption">Screen 6</div>
+        <div class="caption">Screen 7</div>
+        <div class="caption">Screen 8</div>
+      </div>
+    </div>
+    <div class="prototype">
+      <h4>Prototype</h4>
+        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="875" height="1000" src="https://embed.figma.com/proto/U3zllo4CShYArVoicAjdG1/Wavelength---Music-App?node-id=55-6502&p=f&viewport=-297%2C87%2C0.62&scaling=min-zoom&content-scaling=fixed&page-id=3%3A47&embed-host=share" allowfullscreen></iframe>
+    </div>
+
+    <!-- ── SECTION: Outcome ── -->
+    <div class="project-section">
+      <h3>Outcome &amp; Reflection</h3>
+      <p>Wavelength demonstrates that music accessibility is not about adding a features tab. It requires rethinking the entire listening experience from the perspective of someone who cannot hear. Every screen in Wavelength exists because a specific documented research finding identified a specific gap.</p>
+      <p>The most unexpected design challenge was the missing lyrics screen. The instinct was to simply show an error state. The research showed that the real problem is not the missing lyrics themselves but the feeling of being left out of a shared experience with no recourse. Reframing the screen as an empowerment tool rather than an error state changed everything about how it was designed.</p>
+      <p>If I were to continue developing Wavelength I would conduct usability testing with deaf and hard of hearing participants specifically on the word by word lyrics screen and the bass vibration controls, and use Microsoft Clarity to track engagement with the accessibility mode toggle on the home screen.</p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Angela Read</p>
+    </div>
+  </footer>
+
+</body>
+</html>

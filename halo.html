@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halo — Angela Read</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-name">Angela Read</a>
+      <p class="site-tagline">Design Technologist &nbsp;·&nbsp; Design Engineer &nbsp;·&nbsp; Product Designer &nbsp;·&nbsp;Seattle, WA</p>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
+
+    <a href="index.html?tab=ux" class="back-link">&#8592; Back to portfolio</a>
+
+    <div class="project-hero"><img src="images/halo/halo_hero_image.jpg" alt="hero image"></div>
+
+    <div class="project-header">
+      <span class="project-tag">Privacy &amp; Dark Patterns &nbsp;·&nbsp; UX Case Study</span>
+      <h1 class="project-title">Halo</h1>
+      <p class="project-summary">
+        Exposing and countering consent theater — a privacy tool built on original research
+        into the gap between stated policy and actual practice.
+      </p>
+    </div>
+
+    <div class="project-meta">
+      <div class="meta-item">
+        <span class="meta-label">My Role</span>
+        <span class="meta-value">UX Researcher &amp; Designer</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Timeline</span>
+        <span class="meta-value">January — April 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Tools</span>
+        <span class="meta-value">Figma, Miro, Proxyman, Notion</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Type</span>
+        <span class="meta-value">Privacy Tool / Web App</span>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h3>The Problem</h3>
+      <p>Social media platforms are built on a fundamental asymmetry of information. The platforms know everything about their users. Users know almost nothing about what is being collected, who it is shared with, or how it shapes what they see. Consent banners are designed to be dismissed rather than read. Privacy settings are split across multiple menus and default to maximum data sharing. Age verification systems collect sensitive government documents with no transparency about retention. And when users try to leave, the delete account option is buried so deep it functions as a deliberate barrier.</p>
+      <p>Halo is a fictional social media app designed to show what privacy first design looks like when genuine user consent replaces compliance theater.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>Research</h3>
+      <p>Research for Halo drew on primary investigation and extensive secondary sources. Primary research included hands on network traffic analysis using Proxyman, which revealed third party tracking infrastructure operating across major platforms invisibly to users. This fieldwork directly informed two original frameworks I developed: consent theater, which describes the gap between the appearance of user consent and genuine informed agreement, and accountability laundering, which describes how responsibility for data misuse is deliberately distributed across enough parties that no single actor can be held accountable. Both frameworks have since been validated by regulators using similar language in enforcement actions.</p>
+      <p>Secondary research included:</p>
+      <ul>
+        <li>Four Reddit threads from r/privacy on age verification, forced data sharing, breach fatigue, and a Google patent filed in March 2026</li>
+        <li>Academic papers on dark patterns taxonomy, consent design, and manipulative interface design</li>
+        <li>News articles covering Meta and TikTok DSA violations, TikTok's 530 million euro GDPR fine, Meta's 200 million euro DMA fine, and SHEIN's 150 million euro CNIL fine</li>
+        <li>Regulatory frameworks including GDPR, DSA, DMA, CCPA and CPRA, and FTC enforcement actions</li>
+        <li>Competitive analysis of TikTok, Instagram, and Facebook, all of which share the same dark pattern failures</li>    
+      </ul>  
+      <div class="project-img"><img src="images/halo/meta_privacy.png" alt="research"></div>
+      <p class="hint">Meta Privacy Center requiring navigation through multiple menus and sub sections before reaching any actionable control.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>Key Insights</h3>
+      <ul>
+        <li>Consent is designed to be bypassed. Accept All is visually dominant, Reject All requires more taps, and pre checked boxes assume agreement rather than obtaining it</li>
+        <li>Third party tracking is invisible by design. Users have no way to see what is being collected or who receives it without technical tools most people do not have</li>
+        <li>Age verification systems solve a narrow regulatory problem by creating a much larger privacy problem. Government ID documents collected at scale become a surveillance infrastructure</li>
+        <li>Accountability is designed to be diffuse. When data is misused, responsibility is spread across so many parties that no single actor can be held responsible</li>
+        <li>Privacy settings placed three menus deep are not accessible. They are theater</li>
+        <li>The gap between what companies say about privacy and what they actually do is not a communication problem. It is a design decision</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>Design Process</h3>
+      <p>I mapped the current state experience of a general social media user across eight journey stages, from downloading the app through attempting to delete their account. The journey map revealed a consistent pattern across every stage: the platform is designed to make data collection effortless and invisible while making privacy protection effortful and obscure. The most important design decision in Halo was to reverse that asymmetry entirely. Protection is the default. Collection requires active opt in. Every stage of the journey map had a direct corresponding design response in the solution.</p>
+      <div class="journey-map-wrapper">
+        <div class="journey-map-scroll"><img src="images/halo/Halo_map_journey.jpg" alt="map journey"></div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h3>Solution</h3>
+      <p><strong>Screen 1 — Onboarding consent flow</strong> All permissions are off by default. Each permission is a separate card with a plain language description. Basic account data is the only required permission. Accepting and declining each permission takes the same number of taps. There are no pre checked boxes.</p>
+      <p><strong>Screen 2 — Privacy settings on the account screen</strong> A privacy health score is visible directly on the account screen, not buried in settings. All privacy controls are in one place. Third party sharing and personalised ads are off by default. A data transparency link gives users direct access to everything Halo holds about them.</p>
+      <p><strong>Screen 3 — Real time data transparency panel</strong> What Halo is collecting is shown in real time, separated clearly from what the user has turned off. Active items have a revoke button. Inactive items have a turn on option. Data retention policy is stated in plain language. Download and delete data are both accessible from one screen.</p>
+      <p><strong>Screen 4 — Feed with algorithm controls</strong> Chronological feed is the default. There is no autoplay. A natural stopping point appears when the user has seen all new posts. An algorithm transparency panel explains why posts appear. A wellbeing nudge appears after twenty minutes of continuous scrolling.</p>
+      <p><strong>Screen 5 — Cookie and tracking consent banner</strong> The consent banner is a bottom sheet with three clearly explained options. None are pre selected. Accept and decline buttons have equal visual weight and equal number of taps. There are no consent walls blocking app access.</p>
+      <p><strong>Screen 6 — Age verification flow</strong> A prominent privacy promise card appears before any verification begins. Halo never sees the ID. Verification happens on device only. Halo receives only a yes or no result. Three verification method options are available including one for users without government ID.</p>
+      <p><strong>Screen 7 — Account deletion and data removal</strong> Delete account is easy to find. A complete list of what gets permanently deleted is shown before the user commits. A download your data option is available before deletion. Third party data deletion is disclosed with a timeline. Two alternatives are offered before the final confirmation. The delete button is less prominent than keep my account but this is honest UX, not a dark pattern in reverse.</p>
+      <p><strong>Screen 8 — Privacy health dashboard</strong> An overall privacy score with four metric cards shows data collected, third parties active, ad personalisation status, and data retention period at a glance. A recent privacy activity timeline shows every change made and when. A single suggestion for improving the score appears if relevant. A reset to maximum privacy button is always available.</p>
+      <div class="project-lo-fi">
+      <h4>Lo-Fi Wireframes</h4>
+      <div class="img-four">
+        <div class="project-screen"><img src="images/halo/lo_fi_wireframes/lo_fi_screen_1.jpg"></div>
+        <div class="project-screen"><img src="images/halo/lo_fi_wireframes/lo_fi_screen_2.jpg"></div>
+        <div class="project-screen"><img src="images/halo/lo_fi_wireframes/lo_fi_screen_3.jpg"></div>
+        <div class="project-screen"><img src="images/halo/lo_fi_wireframes/lo_fi_screen_4.jpg"></div>
+      </div>
+      <div class="img-four">
+        <div class="caption">Screen 1</div>
+        <div class="caption">Screen 2</div>
+        <div class="caption">Screen 3</div>
+        <div class="caption">Screen 4</div>
+      </div>
+      <div class="img-four">
+        <div class="project-screen"><img src="images/halo/lo_fi_wireframes/lo_fi_screen_5.jpg"></div>
+        <div class="project-screen"><img src="images/halo/lo_fi_wireframes/lo_fi_screen_6.jpg"></div>
+        <div class="project-screen"><img src="images/halo/lo_fi_wireframes/lo_fi_screen_7.jpg"></div>
+        <div class="project-screen"><img src="images/halo/lo_fi_wireframes/lo_fi_screen_8.jpg"></div>
+      </div>
+      <div class="img-four">
+        <div class="caption">Screen 5</div>
+        <div class="caption">Screen 6</div>
+        <div class="caption">Screen 7</div>
+        <div class="caption">creen 8</div>
+      </div>
+    </div>    
+    <div class="project-mid-fi">
+      <h4>Mid-Fi Wireframes</h4>
+      <div class="img-four">
+        <div class="project-screen"><img src="images/halo/mid_fi_wireframes/mid_fi_screen_1.jpg"></div>
+        <div class="project-screen"><img src="images/halo/mid_fi_wireframes/mid_fi_screen_2.jpg"></div>
+        <div class="project-screen"><img src="images/halo/mid_fi_wireframes/mid_fi_screen_3.jpg"></div>
+        <div class="project-screen"><img src="images/halo/mid_fi_wireframes/mid_fi_screen_4.jpg"></div>
+      </div>
+      <div class="img-four">
+        <div class="caption">Screen 1</div>
+        <div class="caption">Screen 2</div>
+        <div class="caption">Screen 3</div>
+        <div class="caption">Screen 4</div>
+      </div>
+      <div class="img-four">
+        <div class="project-screen"><img src="images/halo/mid_fi_wireframes/mid_fi_screen_5.jpg"></div>
+        <div class="project-screen"><img src="images/halo/mid_fi_wireframes/mid_fi_screen_6.jpg"></div>
+        <div class="project-screen"><img src="images/halo/mid_fi_wireframes/mid_fi_screen_7.jpg"></div>
+        <div class="project-screen"><img src="images/halo/mid_fi_wireframes/mid_fi_screen_8.jpg"></div>
+      </div>
+      <div class="img-four">
+        <div class="caption">Screen 5</div>
+        <div class="caption">Screen 6</div>
+        <div class="caption">Screen 7</div>
+        <div class="caption">Screen 8</div>
+      </div>
+    </div>
+    <div class="prototype">
+      <h4>Prototype</h4>
+        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="875" height="1000" src="https://embed.figma.com/proto/X13Chi3EqPYjxE2VfqEFV3/Halo---Social-App-Privacy?node-id=51-6046&p=f&viewport=-1094%2C-592%2C1.14&scaling=min-zoom&content-scaling=fixed&page-id=4%3A27&embed-host=share" allowfullscreen></iframe>
+    </div>
+
+    <div class="project-section">
+      <h3>Outcome &amp; Reflection</h3>
+      <p>Halo demonstrates that privacy first design is not a technical constraint. It is a set of design decisions that platforms have consistently made in the wrong direction because data collection drives revenue and genuine consent reduces it. The consent theater and accountability laundering frameworks I developed during research name that dynamic explicitly and provide a vocabulary for evaluating any platform's privacy design against its stated values.</p>
+      <p>The most challenging design problem in Halo was the age verification screen. Every existing approach to age verification trades one harm for another. Collecting government IDs creates a surveillance database. Self reported dates of birth are unverifiable. The solution in Halo uses on device verification that sends only a yes or no result, which sidesteps the data retention problem entirely. This is technically achievable today and simply has not been prioritized by platforms with no regulatory incentive to do so.</p>
+      <p>If I were to continue developing Halo I would conduct usability testing specifically on the onboarding consent flow to measure how many users engage with individual permissions versus accepting all defaults, and use Microsoft Clarity to track engagement with the privacy health dashboard over time.</p>
+    </div>
+    
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Angela Read</p>
+    </div>
+  </footer>
+
+</body>
+</html>

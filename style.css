@@ -1,0 +1,895 @@
+/* ─────────────────────────────────────────────────────────────
+   Angela Read — Portfolio
+   style.css  |  shared across all pages
+   ───────────────────────────────────────────────────────────── */
+
+/* ─── GOOGLE FONTS ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ─── CSS VARIABLES ─────────────────────────────────────────── */
+/* Edit these to change the whole site's color palette at once  */
+:root {
+  --color-bg:          #FAF8F5;   /* page background            */
+  --color-surface:     #FFFFFF;   /* card / panel background    */
+  --color-border:      #E8E4DE;   /* default border             */
+  --color-text:        #1C1A18;   /* primary text               */
+  --color-text-muted:  #7A7570;   /* secondary / caption text   */
+  --color-accent:      #B87A5A;   /* terracotta accent          */
+  --color-accent-soft: #F5EFE8;   /* light tint of accent       */
+
+  --font-serif:  'Lora', Georgia, serif;
+  --font-sans:   'DM Sans', system-ui, sans-serif;
+
+  --radius-card: 12px;
+  --radius-pill: 20px;
+
+  --max-width: 920px;
+}
+
+/* ─── RESET & BASE ──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Links have no default underline; individual components style them */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Images never overflow their container */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─── LAYOUT CONTAINER ──────────────────────────────────────── */
+/* Centered, max-width wrapper used on every page */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  padding: 0 1.5rem;
+}
+
+/* ─── SITE HEADER ───────────────────────────────────────────── */
+.site-header {
+  padding: 2.5rem 0 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-name {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.site-name:hover {
+  color: var(--color-accent);
+}
+
+.site-tagline {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+/* ─── TAB NAVIGATION ────────────────────────────────────────── */
+.tab-nav {
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 2.5rem;
+}
+
+.tab-nav .container {
+  display: flex;
+  gap: 0;
+}
+
+/* Each tab is a <button> for accessibility */
+.tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;          /* sits on top of .tab-nav border */
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.tab-btn:hover {
+  color: var(--color-text);
+}
+
+/* Active tab gets the accent underline */
+.tab-btn.active {
+  color: var(--color-text);
+  font-weight: 500;
+  border-bottom-color: var(--color-accent);
+}
+
+/* ─── TAB PANELS ────────────────────────────────────────────── */
+/* Hidden by default; .active makes it visible */
+.tab-panel {
+  display: none;
+  padding-bottom: 50px;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* ─── SECTION INTRO ─────────────────────────────────────────── */
+.section-intro {
+  margin-bottom: 2rem;
+}
+
+.section-intro h2 {
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.section-intro p {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+/* ─── CARD GRID ─────────────────────────────────────────────── */
+/* Used for both UX case studies and Architecture projects */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ─── CASE CARD (shared by UX + Architecture) ───────────────── */
+.case-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease, transform 0.15s ease;
+}
+
+.case-card:hover {
+  border-color: #C5BDB4;
+  transform: translateY(-2px);
+  box-shadow: 2px 4px 4px 1px rgb(193, 193, 193);
+}
+
+/* ── Thumbnail area ── */
+.card-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+/* Swap these background colors to match your project palette */
+.thumb-wavelength  { background: #F5EFE8; }  /* warm cream    */
+.thumb-cove        { background: #E8EDF5; }  /* soft blue     */
+.thumb-halo        { background: #EDE8F5; }  /* soft lavender */
+.thumb-parkside    { background: #E8F0E8; }  /* soft green    */
+.thumb-brownfield  { background: #F0EDE8; }  /* warm sand     */
+
+/* Italic label inside placeholder thumbnail */
+.thumb-label {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  opacity: 0.9;
+}
+
+/* When you have a real image, put it inside .card-thumb like this:
+   <div class="card-thumb thumb-wavelength">
+     <img src="images/wavelength-cover.jpg" alt="Wavelength cover">
+   </div>
+   The image will fill the space automatically via the CSS below */
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Card body ── */
+.card-body {
+  padding: 1.1rem 1.2rem 0.5rem;
+  flex: 1;                        /* pushes pills to the bottom */
+}
+
+.card-tag {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.8375rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ── Pills row at bottom of card ── */
+.card-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.75rem 1.2rem 1rem;
+  border-top: 0.5px solid var(--color-border);
+  margin-top: 0.75rem;
+}
+
+.pill {
+  background: #F3F0EB;
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+}
+
+/* ─── MASONRY GRID (Creative Work) ─────────────────────────── */
+/* CSS columns approach — simple, no JavaScript needed */
+.masonry-grid {
+  columns: 3;                   /* number of columns           */
+  column-gap: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Each item breaks inside its column */
+.masonry-item {
+  break-inside: avoid;          /* prevents image from splitting across columns */
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 0.5px solid var(--color-border);
+  box-shadow: 1px 2px 4px 1px rgb(168, 168, 168);
+}
+
+.masonry-item :hover{ 
+  transform: scale(1.05);
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;}
+
+/* Placeholder heights — replace with real images later */
+.img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  background: #F0EDE8;
+  height: 180px;
+}
+
+/* Tall placeholder — creates visual variety in the masonry grid */
+.masonry-item.tall .img-placeholder {
+  height: 280px;
+}
+
+/* When you have real images, replace the placeholder div with an img tag:
+   <div class="masonry-item tall">
+     <img src="images/rendering-01.jpg" alt="Parkside rendering">
+   </div>   */
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─── ABOUT ME ──────────────────────────────────────────────── */
+.about-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding-bottom: 20px;
+}
+
+/* Photo placeholder */
+.about-photo-placeholder {
+  width: 180px;
+  height: 220px;
+  border-radius: 8px;
+  background: #EDE8E2;
+  border: 0.5px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* Real photo — uncomment in HTML when ready */
+.about-photo {
+  width: 420px;
+  height: 360px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.about-name {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+
+.about-role {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.25rem;
+}
+
+.about-bio {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 1rem;
+  text-align:justify;
+}
+
+.about-links {
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.about-link {
+  font-size: 1.0rem;
+  color: var(--color-text-muted);
+  border: 0.5px solid var(--color-border);
+  padding: 0.3rem 0.875rem;
+  border-radius: var(--radius-pill);
+  transition: color 0.15s, border-color 0.15s;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-link:hover {
+  background-color: var(--color-text);
+  border-color: #B0A89E;
+  color:#EDE8E2;
+  opacity: 60%;
+}
+
+/* ─── PROJECT DETAIL PAGE ───────────────────────────────────── */
+/* Used by wavelength.html, cove.html, halo.html,
+   parkside.html, brownfield.html                               */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+  transition: color 0.15s;
+}
+
+.back-link:hover {
+  color: var(--color-text);
+}
+
+.project-hero {
+  width: 100%;
+  aspect-ratio: 16 / 6;
+  border-radius: var(--radius-card);
+  border: 0.5px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  opacity: 0.8;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  height: 350px;
+}
+
+.project-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+}
+
+.project-header {
+  margin-bottom: 2rem;
+}
+
+.project-tag {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.project-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.project-summary {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  max-width: 620px;
+}
+
+/* Meta row — role, timeline, tools */
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-top: 0.5px solid var(--color-border);
+  border-bottom: 0.5px solid var(--color-border);
+  margin: 2rem 0;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.meta-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.meta-value {
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+/* Content sections on detail pages */
+.project-section {
+  margin-bottom: 3rem;
+}
+
+.project-lo-fi {
+  margin-bottom: 3rem;
+  padding-bottom: 20px;
+  padding-top: 10px;   
+}
+
+.project-mid-fi {
+  margin-bottom: 3rem;
+  background-color:#E8E4DE;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.project-section h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.875rem;
+  color: var(--color-text);
+}
+
+.project-section, .project-lo-fi, .project-mid-fi, h4 {
+  font-family: var(--font-serif);
+  font-size: 1.0rem;
+  font-weight: 400;
+  margin-bottom: 0.875rem;
+  color: var(--color-text);
+}
+
+.project-section p {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 640px;
+  margin-bottom: 0.875rem;
+  text-align:justify;
+}
+
+/* Image inside a project section */
+.project-img {
+  width: 100%;
+  border-radius: 8px;
+  border: 0.5px solid var(--color-border);
+  margin: 1.25rem 0;
+  background: #F3F0EB;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.project-screen {
+  width: 100%;
+  border-radius: 12px;
+  border: 0.5px solid var(--color-border);
+  margin: 1.25rem 0;
+  background: #F3F0EB;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  box-shadow: 0px 3px 4px 0px var(--color-text-muted);
+  overflow: hidden;
+}
+
+.caption{text-align:center;
+        font-family: var( --font-serif);
+        margin-top: 3px;
+        margin-bottom: 10px;}
+
+.project-map-journey {
+  width: 100%;
+  border: 2px solid var(--color-border);
+  margin: 1.25rem 0;
+  background: #F3F0EB;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.project-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Two-column image layout for side-by-side comparisons */
+.img-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.img-four {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: -10px;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+/* ─── SITE FOOTER ───────────────────────────────────────────── */
+.site-footer {
+  margin-top: auto;              /* pushes footer to bottom on short pages */
+  padding: 2rem 0;
+  border-top: 0.5px solid var(--color-border);
+  text-align: center;
+}
+
+.site-footer p {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.03em;
+}
+
+.project-hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ─── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 700px) {
+
+  .tab-btn {
+    padding: 0.65rem 0.875rem;
+    font-size: 0.8rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .masonry-grid {
+    columns: 2;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .img-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-grid {
+    columns: 1;
+  }
+}
+
+/* ─── HOME PAGE ─────────────────────────────────────────────── */
+.home-hero {
+  padding: 4rem 0 3.5rem;
+  max-width: 620px;
+}
+
+.home-headline {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.home-sub {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.home-statement {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.home-cta {
+  display: inline-block;
+  background: var(--color-text);
+  color: var(--color-bg);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.home-cta:hover {
+  opacity: 0.4;
+  color: var(--color-bg);
+}
+
+.home-featured {
+  margin-bottom: 3rem;
+  margin-top: 30px;
+}
+
+.home-featured-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.home-skills {
+  margin-bottom: 3rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.skill-group {
+  background: var(--color-surface);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 1rem 1.2rem;
+  box-shadow: 0px 3px 4px 0px var(--color-text-muted);
+}
+
+.skill-group-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+
+.skill-group-items {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.video-hero {
+  background: #000;
+  padding: 0;
+}
+
+.video-hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── LIGHTBOX ──────────────────────────────────────────────── */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 4px;
+  object-fit: contain;
+  transform: scale(0.85);
+  transition: transform 0.4s ease;
+}
+
+#lightbox.active #lightbox-img {
+  transform: scale(1);
+}
+
+#lightbox-close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.5rem;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+#lightbox-close:hover {
+  opacity: 1;
+}
+
+.hint {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+
+.project-section ul {
+  padding-left: 4.0rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.project-section ul li {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: #7A7570;
+  margin-bottom: 0.4rem;
+}
+
+.prototype 
+{padding-top: 40px;
+  padding-bottom: 20px;}
+
+iframe{box-shadow: 5px 5px 9px 1px rgb(118, 118, 118);}
+
+.journey-map-scroll {
+  width: 100%;
+  overflow-x: auto;
+  border-left: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  margin: 1.25rem 0;
+  cursor: grab;
+  box-shadow: 5px 5px 9px 1px rgb(118, 118, 118);
+}
+
+.journey-map-scroll:active {
+  cursor: grabbing;
+}
+
+.journey-map-scroll img {
+  display: block;
+  height: 500px;
+  width: auto;
+  max-width: none;
+}
+
+.journey-map-wrapper {
+  border: 1px solid #1C1A18;
+  position: relative;
+  margin: 1.25rem 0;
+  background: #d0ccc7;
+  overflow: hidden;
+  padding-left: 10px;
+  box-shadow: 
+    inset 3px 3px 10px rgba(0,0,0,0.3),
+    inset -3px -3px 10px rgba(255,255,255,0.4);
+}

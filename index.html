@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angela Read — Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─── SITE HEADER ─────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-name">Angela Read</a>
+      <p class="site-tagline">Design Technologist &nbsp;·&nbsp; Design Engineer &nbsp;·&nbsp; Product Designer &nbsp;·&nbsp;Seattle, WA</p>
+    </div>
+  </header>
+
+  <!-- ─── TAB NAVIGATION ──────────────────────────────────────── -->
+  <nav class="tab-nav">
+    <div class="container">
+      <button class="tab-btn active" data-tab="home">Home</button>
+      <button class="tab-btn" data-tab="ux">UX Design</button>
+      <button class="tab-btn" data-tab="arch">Architecture</button>
+      <button class="tab-btn" data-tab="creative">Creative Work</button>
+      <button class="tab-btn" data-tab="about">About Me</button>
+    </div>
+  </nav>
+
+  <!-- ─── MAIN CONTENT ────────────────────────────────────────── -->
+  <main class="container">
+
+    <!-- HOME TAB -->
+<section id="tab-home" class="tab-panel active">
+
+  <div class="home-intro">
+    <button class="home-cta tab-btn" data-tab="ux">View my work</button>
+  </div>
+  <div>
+    <img src="images/cover_page.jpg" alt="cover page">
+  </div>
+
+  <div class="home-skills">
+    <p class="home-featured-label">Tools &amp; Skills</p>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <p class="skill-group-label">Design</p>
+        <p class="skill-group-items">Figma &nbsp;·&nbsp; Miro &nbsp;·&nbsp; UX Research &nbsp;·&nbsp; Wireframing &nbsp;·&nbsp; Prototyping</p>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-label">Development</p>
+        <p class="skill-group-items">HTML &nbsp;·&nbsp; CSS &nbsp;·&nbsp; JavaScript &nbsp;·&nbsp; GitHub &nbsp;·&nbsp; VS Code</p>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-label">Architecture</p>
+        <p class="skill-group-items">AutoCAD &nbsp;·&nbsp; Revit &nbsp;·&nbsp; SketchUp &nbsp;·&nbsp; Systems Thinking &nbsp;·&nbsp; Twinmotion</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+    <!-- UX DESIGN TAB -->
+      <section id="tab-ux" class="tab-panel">
+      <div class="section-intro">
+        <h2>UX Case Studies</h2>
+        <p>Three original research projects exploring accessibility, security, and privacy — each grounded in primary research and the full design thinking process.</p>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- Wavelength -->
+        <a href="wavelength.html" class="case-card">
+          <div class="card-thumb thumb-wavelength">
+            <span class="thumb-label"><img src="images/wavelength/Wavelength_cover_page.jpg" alt="cover page"></span>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Accessibility</span>
+            <h3 class="card-title">Wavelength</h3>
+            <p class="card-desc">Redesigning the hearing health experience — from discovery to daily support — for people navigating hearing difference.</p>
+          </div>
+          <div class="card-pills">
+            <span class="pill">Research</span>
+            <span class="pill">Accessibility</span>
+            <span class="pill">Mobile</span>
+          </div>
+        </a>
+
+        <!-- Cove -->
+        <a href="cove.html" class="case-card">
+          <div class="card-thumb thumb-cove">
+            <span class="thumb-label"><img src="images/cove/Cove_cover_page.jpg" alt="cover page"></span>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Security UX</span>
+            <h3 class="card-title">Cove</h3>
+            <p class="card-desc">Making personal security legible — a tool that transforms breach data into clear, actionable protection for everyday users.</p>
+          </div>
+          <div class="card-pills">
+            <span class="pill">Security</span>
+            <span class="pill">Trust</span>
+            <span class="pill">Dashboard</span>
+          </div>
+        </a>
+
+        <!-- Halo -->
+        <a href="halo.html" class="case-card">
+          <div class="card-thumb thumb-halo">
+            <span class="thumb-label"><img src="images/halo/Halo_cover_page.jpg" alt="cover page"></span>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Privacy &amp; Dark Patterns</span>
+            <h3 class="card-title">Halo</h3>
+            <p class="card-desc">Exposing and countering consent theater — a privacy tool built on original research into the gap between stated policy and actual practice.</p>
+          </div>
+          <div class="card-pills">
+            <span class="pill">Privacy</span>
+            <span class="pill">Ethics</span>
+            <span class="pill">Systems</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE TAB -->
+    <section id="tab-arch" class="tab-panel">
+      <div class="section-intro">
+        <h2>Architecture</h2>
+        <p>Nine years of practice across commercial, residential, and mixed-use projects. Spatial thinking, technical depth, and systems-level design.</p>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- Parkside -->
+        <a href="parkside.html" class="case-card">
+          <div class="card-thumb thumb-parkside">
+            <img src="images/parkside/parkside_1.png" alt="Parkside">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Architecture</span>
+            <h3 class="card-title">Parkside</h3>
+            <p class="card-desc">32 mixed-income multifamily housing units and 26,000 sf of commercial space adjacent to Our Lady of Lourdes Hospital in Camden, NJ.</p>
+          </div>
+          <div class="card-pills">
+            <span class="pill">Mixed-Use</span>
+            <span class="pill">Urban</span>
+          </div>
+        </a>
+
+        <!-- Brownfield Site -->
+        <a href="brownfield.html" class="case-card">
+          <div class="card-thumb thumb-brownfield">
+            <img src="images/brownfield/brownfield_revitalization_6.jpg" alt="brownfield site">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Architecture</span>
+            <h3 class="card-title">Brownfield Site</h3>
+            <p class="card-desc">The Brownfield Revitalization is located in an urban neighborhood on a former industrial site within one mile of high falls in downtown Rochester.</p>
+          </div>
+          <div class="card-pills">
+            <span class="pill">Adaptive Reuse</span>
+            <span class="pill">Site</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- CREATIVE WORK TAB -->
+    <section id="tab-creative" class="tab-panel">
+      <div class="section-intro">
+        <p>Renderings, photography, and work outside formal practice.</p>
+        <p class="hint">Click any image to view full screen.</p>
+        <h2>Architecture</h2>
+      </div>
+
+      <!-- Masonry grid — add your images by replacing the placeholder divs -->
+      <!-- To add a real image: replace <div class="masonry-placeholder"> with <img src="images/your-file.jpg" alt="description"> -->
+      <div class="masonry-grid">
+        <div class="masonry-item tall"><img src="images/creative_work/architecture/architecture_center_rit_1.png" alt="architecture"></div>
+        <div class="masonry-item"><img src="images/creative_work/architecture/architecture_center_rit_3.png" alt="architecture"></div>
+        <div class="masonry-item tall"><img src="images/creative_work/architecture/dan_house_3.jpg" alt="architecture"></div>
+        <div class="masonry-item"><img src="images/creative_work/architecture/dan_house_4.jpg" alt="architecture"></div>
+        <div class="masonry-item"><img src="images/creative_work/architecture/gala_1.jpg" alt="architecture"></div>
+        <div class="masonry-item tall"><img src="images/creative_work/architecture/gala_2.jpg" alt="architecture"></div>
+        <div class="masonry-item"><img src="images/creative_work/architecture/ship_bottom_1.png" alt="architecture"></div>
+        <div class="masonry-item"><img src="images/creative_work/architecture/urban_developmennt_rit_1.png" alt="architecture"></div>
+        <div class="masonry-item"><img src="images/creative_work/architecture/urban_developmennt_rit_2.png" alt="architecture"></div>
+        <div class="masonry-item"><img src="images/creative_work/architecture/bristol_1.png" alt="architecture"></div>
+        <div class="masonry-item tall"><img src="images/creative_work/architecture/east_greenville_1.jpg" alt="architecture"></div>
+        <div class="masonry-item"><img src="images/creative_work/architecture/Thesis_14.jpg" alt="architecture"></div>
+        <div class="masonry-item"><img src="images/creative_work/architecture/east_greenville_2.jpg" alt="architecture"></div>
+        <div class="masonry-item"><img src="images/creative_work/architecture/peerless_loft.jpg" alt="architecture"></div>
+        <div class="masonry-item"><img src="images/creative_work/architecture/urban_developmennt_rit_3.png" alt="architecture"></div>
+        <div class="masonry-item"><img src="images/creative_work/architecture/loft_2.jpg" alt="architecture"></div>
+        <div class="masonry-item tall"><img src="images/creative_work/architecture/architecture_center_rit_6.png" alt="architecture"></div>
+      </div>
+      <div class="section-intro">
+        <h2>Interior Design</h2>
+      </div>
+
+      <!-- Masonry grid — add your images by replacing the placeholder divs -->
+      <!-- To add a real image: replace <div class="masonry-placeholder"> with <img src="images/your-file.jpg" alt="description"> -->
+      <div class="masonry-grid">
+        <div class="masonry-item tall"><img src="images/creative_work/interior_design/east_greenville_20.jpg" alt="interior design"></div>
+        <div class="masonry-item"><img src="images/creative_work/interior_design/gala_6.jpg" alt="interior design"></div>
+        <div class="masonry-item"><img src="images/creative_work/interior_design/healthcare_rit_4.jpg" alt="interior design"></div>
+        <div class="masonry-item tall"><img src="images/creative_work/interior_design/hospitality_design_rit_3.jpg" alt="interior design"></div>
+        <div class="masonry-item"><img src="images/creative_work/interior_design/office_design_rit_1.jpg" alt="interior design"></div>
+        <div class="masonry-item"><img src="images/creative_work/interior_design/residential_design_rit_3.jpg" alt="interior design"></div>
+        <div class="masonry-item tall"><img src="images/creative_work/interior_design/retail_design_1.jpg" alt="interior design"></div>
+        <div class="masonry-item"><img src="images/creative_work/interior_design/ship_bottom_6.png" alt="interior design"></div>
+        <div class="masonry-item"><img src="images/creative_work/interior_design/ship_bottom_7.png" alt="interior design"></div>
+        <div class="masonry-item"><img src="images/creative_work/interior_design/gala_7.jpg" alt="interior design"></div>
+        <div class="masonry-item tall"><img src="images/creative_work/interior_design/lab_3.png" alt="interior design"></div>
+        <div class="masonry-item"><img src="images/creative_work/interior_design/office_design_rit_2.jpg" alt="interior design"></div>
+        <div class="masonry-item"><img src="images/creative_work/interior_design/atrium_view.jpg" alt="interior design"></div>
+        <div class="masonry-item tall"><img src="images/creative_work/interior_design/MArch_41.jpg" alt="interior design"></div>
+        <div class="masonry-item"><img src="images/creative_work/interior_design/office_2.png" alt="interior design"></div>
+        <div class="masonry-item"><img src="images/creative_work/interior_design/sketchup_5.jpg" alt="interior design"></div>
+      </div>
+      <div class="section-intro">
+        <h2>Photography</h2>
+      </div>
+
+      <!-- Masonry grid — add your images by replacing the placeholder divs -->
+      <!-- To add a real image: replace <div class="masonry-placeholder"> with <img src="images/your-file.jpg" alt="description"> -->
+      <div class="masonry-grid">
+        <div class="masonry-item tall"><img src="images/creative_work/photography/photography_1.jpg" alt="photography"></div>
+        <div class="masonry-item"><img src="images/creative_work/photography/photography_16.jpg" alt="photography"></div>
+        <div class="masonry-item"><img src="images/creative_work/photography/photography_18.jpg" alt="photography"></div>
+        <div class="masonry-item tall"><img src="images/creative_work/photography/photography_31.jpg" alt="photography"></div>
+        <div class="masonry-item"><img src="images/creative_work/photography/photography_14.jpg" alt="photography"></div>
+        <div class="masonry-item"><img src="images/creative_work/photography/photography_62.jpg" alt="photography"></div>
+        <div class="masonry-item tall"><img src="images/creative_work/photography/photography_15.jpg" alt="photography"></div>
+        <div class="masonry-item"><img src="images/creative_work/photography/photography_17.jpg" alt="photography"></div>
+        <div class="masonry-item"><img src="images/creative_work/photography/photography_38.jpg" alt="photography"></div>
+        <div class="masonry-item"><img src="images/creative_work/photography/photography_0191.JPG" alt="photography"></div>
+        <div class="masonry-item"><img src="images/creative_work/photography/photography_0232.JPG" alt="photography"></div>
+        <div class="masonry-item tall"><img src="images/creative_work/photography/photography_0271.JPG" alt="photography"></div>
+        <div class="masonry-item"><img src="images/creative_work/photography/photography_0394.JPG" alt="photography"></div>
+        <div class="masonry-item"><img src="images/creative_work/photography/photography_0411.JPG" alt="photography"></div>
+        <div class="masonry-item tall"><img src="images/creative_work/photography/photography_0534.JPG" alt="photography"></div>
+        <div class="masonry-item"><img src="images/creative_work/photography/photography_0539.JPG" alt="photography"></div>
+        <div class="masonry-item"><img src="images/creative_work/photography/photography_0647.JPG" alt="photography"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT ME TAB -->
+    <section id="tab-about" class="tab-panel">
+      <div class="about-layout">
+
+        <!-- Photo — replace src with your image path when ready -->
+        <div class="about-photo-wrap">
+          <img src="images/about_me.jpg" alt="Angela Read" class="about-photo">
+          
+        </div>
+
+        <div class="about-text">
+          <h2 class="about-name">Angela Read</h2>
+          <p class="about-role">Design Technologist</p>
+
+          <!-- Edit this bio copy directly — it's just plain text in a paragraph tag -->
+          <p class="about-bio">
+            I have always dreamed of becoming an architect ever since I saw Fallingwater, a house designed by Frank Lloyd Wright outside of Pittsburgh, Pennsylvania. I understood what design could do — how a building could feel inevitable, like it had always belonged to that hillside. That feeling stayed with me through a civil engineering program I left, an interior design degree I loved, graduate school in architecture, and study abroad programs in Florence and Copenhagen that changed how I see the world.
+          </p>
+          <p class="about-bio">
+            Architecture gave me everything I expected it to. Systems thinking. Spatial reasoning. The ability to hold a complex problem in my head and work through it carefully. What it gave me that I did not expect was a growing awareness that the work I cared most about kept moving further away as my career advanced.
+          <p class="about-bio">
+            I spent more time coordinating between teams and less time building things. And I noticed something: the moments that still lit me up were the ones closest to technology. How a website was structured. How a user moved through a product. What decisions sat behind every interaction on a screen.
+          </p>
+          <p class="about-bio">
+            I had always been curious about how computers worked. I just had not followed that curiosity yet.
+          </p>
+          <p class="about-bio">
+            Taking UX design courses gave it a framework. Learning to code made it real. HTML and CSS felt immediately natural, the same logic and attention to detail that architecture trained in me, just applied to a different medium. I am working through JavaScript now, and the deeper I go, the more certain I am that this is where I belong.
+          </p>
+          <p class="about-bio">
+            My graduate thesis has been cited seven times in published research and viewed by researchers across nearly 100 countries. That depth of focus is not something I learned. It is how I work. I bring it to UX research, to front-end development, and to my independent study of AI systems and privacy design.
+          </p>
+          <p class="about-bio">
+            <strong>I am not leaving design. I am following it somewhere new.</strong>
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Angela Read</p>
+    </div>
+    <div class="about-links">
+            <a href="https://github.com/AngelaRead" class="about-link"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/angela-read/" class="about-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://drive.google.com/file/d/1iCenTR9e3sybrrNtrvwWAyN2BmtrKqM3/view?usp=sharing" class="about-link"><i class="fas fa-file-pdf"></i> Resume</a>
+          </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
