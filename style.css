@@ -888,3 +888,22 @@ iframe{box-shadow: 5px 5px 9px 1px rgb(118, 118, 118);}
 
 }
 
+#lightbox-prev,
+#lightbox-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 1rem;
+  transition: opacity 0.15s;
+  user-select: none;
+  z-index: 1001;
+}
+
+#lightbox-prev { left: 0.5rem; }
+#lightbox-next { right: 0.5rem; }
+
+#lightbox-prev:hover,
+#lightbox-next:hover { opacity: 1 !important; }
