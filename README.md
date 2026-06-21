@@ -1,6 +1,7 @@
 # angelaread.design
+Personal portfolio site for Angela Read — Architectural Designer, Design Technologist, and Spatial Thinker
 
-Personal portfolio site for Angela Read — Design Technologist, UX Engineer, and Product Designer based in Seattle, WA.
+The portfolio includes UX case studies, architectural design work, and creative projects spanning both fields.
 
 **Live site — [angelaread.design](https://angelaread.design)**
 
