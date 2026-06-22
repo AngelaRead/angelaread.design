@@ -129,3 +129,39 @@ document.addEventListener('keydown', function (e) {
   }
 
 });
+
+// ─── BACK TO TOP BUTTON ──────────────────────────────────────
+
+var backToTop = document.createElement('button');
+backToTop.id = 'back-to-top';
+backToTop.innerHTML = '&#8593; Back to top';
+backToTop.setAttribute('aria-label', 'Back to top');
+document.body.appendChild(backToTop);
+
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 400) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
+  }
+});
+
+backToTop.addEventListener('click', function () {
+  var activePanel = document.querySelector('.tab-panel.active');
+  if (activePanel) {
+    activePanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+window.addEventListener('scroll', function () {
+  var activePanel = document.querySelector('.tab-panel.active');
+  var isHiddenTab = activePanel && (activePanel.id === 'tab-home' || activePanel.id === 'tab-about');
+
+  if (window.scrollY > 400 && !isHiddenTab) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
+  }
+});
