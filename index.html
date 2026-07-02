@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+   <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Angela Read — Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -16,17 +21,20 @@
 <body>
 
   <!-- ─── SITE HEADER ─────────────────────────────────────────── -->
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="site-name">Angela Read</a>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="site-name">Angela Read</a>
+    <div class="site-header-row">
       <p class="site-tagline">Architectural Designer &nbsp;·&nbsp; Spatial Thinker &nbsp;·&nbsp; Design Technologist &nbsp;·&nbsp; Seattle, WA</p>
+      <button id="theme-toggle" aria-label="Toggle dark mode"></button>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- ─── TAB NAVIGATION ──────────────────────────────────────── -->
   <nav class="tab-nav">
     <div class="container">
-      <button class="tab-btn active" data-tab="home">Home</button>
+      <button class="tab-btn" data-tab="home">Home</button>
       <button class="tab-btn" data-tab="arch">Architecture</button>
       <button class="tab-btn" data-tab="creative">Visual Work</button>
       <button class="tab-btn" data-tab="ux">UX Design</button>
@@ -39,13 +47,13 @@
   <main class="container">
 
     <!-- HOME TAB -->
-<section id="tab-home" class="tab-panel active">
+<section id="tab-home" class="tab-panel">
 
   <div class="home-intro">
     <button class="home-cta tab-btn" data-tab="arch">View my work</button>
   </div>
   <div class="logo-wrap">
-    <img src="images/cover_page.jpg" alt="Angela Read">
+    <img src="images/cover_page.png" alt="Angela Read">
     <div class="logo-overlay">
    <svg width="1073" height="587" viewBox="0 0 1073 587" fill="none" xmlns="http://www.w3.org/2000/svg">
 <style>
@@ -77,19 +85,19 @@
   }
 </style>
 
-<line x1="773.427" y1="327.897" x2="878.823" y2="44.1936" stroke="#1C1A18" stroke-width="4" stroke-linecap="round"/>
-<line x1="684.822" y1="567.67" x2="761.429" y2="361.42" stroke="#1C1A18" stroke-width="4" stroke-linecap="round"/>
+<line x1="773.427" y1="327.897" x2="878.823" y2="44.1936" stroke="var(--color-text)" stroke-width="4" stroke-linecap="round"/>
+<line x1="684.822" y1="567.67" x2="761.429" y2="361.42" stroke="var(--color-text)" stroke-width="4" stroke-linecap="round"/>
 
-<line class="pencil-line-flat" x1="985" y1="331.242" x2="106" y2="331.242" stroke="#1C1A18" stroke-width="10"/>
+<line class="pencil-line-flat" x1="985" y1="331.242" x2="106" y2="331.242" stroke="var(--color-text)" stroke-width="7"/>
 
-<line class="thin-line" x1="985" y1="342.742" x2="106" y2="342.742" stroke="black"/>
-<line class="thin-line" x1="985" y1="349.742" x2="106" y2="349.742" stroke="black"/>
+<line class="thin-line" x1="985" y1="342.742" x2="106" y2="342.742" stroke="var(--color-text)"/>
+<line class="thin-line" x1="985" y1="349.742" x2="106" y2="349.742" stroke="var(--color-text)"/>
 
-<line class="pencil-line" x1="985" y1="360.242" x2="106" y2="360.242" stroke="#1C1A18" stroke-width="10"/>
+<line class="pencil-line" x1="985" y1="360.242" x2="106" y2="360.242" stroke="var(--color-text)" stroke-width="7"/>
 
 <g class="pencil-tip">
-<path d="M4 345.742L106 325.39L106 366.093L4 345.742Z" fill="#F8F5F3"/>
-<path d="M105.5 326L105.5 365.484L6.55371 345.742L105.5 326Z" stroke="#1C1A18"/>
+<path d="M4 345.742L106 325.39L106 366.093L4 345.742Z" fill="var(--color-bg)"/>
+<path d="M105.5 326L105.5 365.484L6.55371 345.742L105.5 326Z" stroke="var(--color-text)"/>
 </g>
 
 <g filter="url(#filter4_d_12_17)">
@@ -157,7 +165,7 @@
     <div class="skills-grid">
       <div class="skill-group">
         <p class="skill-group-label">Design</p>
-        <p class="skill-group-items">Figma &nbsp;·&nbsp; Miro &nbsp;·&nbsp; UX Research &nbsp;·&nbsp; Wireframing &nbsp;·&nbsp; Prototyping</p>
+        <p class="skill-group-items">Figma &nbsp;·&nbsp; Miro &nbsp;·&8nbsp; UX Research &nbsp;·&nbsp; Wireframing &nbsp;·&nbsp; Prototyping</p>
       </div>
       <div class="skill-group">
         <p class="skill-group-label">Development</p>
@@ -382,7 +390,7 @@
             Taking UX design courses gave it a framework. Learning to code made it real. HTML and CSS felt immediately natural, the same logic and attention to detail that architecture trained in me, just applied to a different medium. I am working through JavaScript now.
           </p>
           <p class="about-bio">
-            My graduate thesis has been cited seven times in published research and viewed by researchers across nearly 100 countries. That depth of focus is not something I learned. It is how I work. I bring it to architecture, UX research, front-end development, and my independent study of AI systems and privacy design.
+            My graduate thesis has been cited eight times in published research and viewed by researchers across nearly 100 countries. That depth of focus is not something I learned. It is how I work. I bring it to architecture, UX research, front-end development, and my independent study of AI systems and privacy design.
           </p>
           <p class="about-bio">
             <strong>This is not a shift away from design. It is design, just in more directions.</strong>

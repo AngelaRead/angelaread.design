@@ -26,6 +26,133 @@
   --max-width: 920px;
 }
 
+/* ─── DARK MODE ─────────────────────────────────────────────── */
+html.dark-mode,
+html.dark-mode body,
+body.dark-mode {
+  --color-bg:          #1C1A18;
+  --color-surface:     #2A2724;
+  --color-border:      #3D3A36;
+  --color-text:        #E8E4DE;
+  --color-text-muted:  #A89F98;
+  --color-accent:      #C68A6A;
+  --color-accent-soft: #2E2420;
+}
+
+html.dark-mode {
+  background-color: #1C1A18;
+}
+
+#theme-toggle {
+  background: none;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+#theme-toggle:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+body.dark-mode .logo-wrap img {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+body.dark-mode .pill {
+  background: #3D3A36;
+  color: var(--color-text-muted);
+}
+
+body.dark-mode .card-body .card-title {
+  color: var(--color-text);
+}
+
+body.dark-mode .case-card {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+body.dark-mode .journey-map-scroll img {
+  filter: brightness(0.9);
+}
+
+body.dark-mode .journey-map-wrapper {
+  background: #2A2724;
+  border-color: var(--color-border);
+}
+/* ─── THEME TOGGLE ──────────────────────────────────────────── */
+#theme-toggle {
+  position: relative;
+  width: 120px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  background: var(--color-border);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
+}
+
+#theme-toggle::before {
+  content: 'DARK';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+#theme-toggle::after {
+  content: 'LIGHT';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 58px;
+  height: 26px;
+  border-radius: var(--radius-pill);
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+body.dark-mode #theme-toggle::before {
+  content: 'LIGHT';
+  left: 10px;
+  right: auto;
+}
+
+body.dark-mode #theme-toggle::after {
+  content: 'DARK';
+  transform: translateX(56px);
+}
+
+.site-header-row {
+  display: flex;
+  align-items: center;
+  gap: 15rem;
+}
+
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
 /* ─── RESET & BASE ──────────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -602,6 +729,38 @@ img {
   .project-title {
     font-size: 1.5rem;
   }
+
+  .site-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+   #theme-toggle {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 100px;
+    height: 28px;
+  }
+
+  .site-header {
+    position: relative;
+  }
+
+  #theme-toggle::after {
+    width: 48px;
+    height: 22px;
+  }
+
+  body.dark-mode #theme-toggle::after {
+    transform: translateX(48px);
+  }
+
+  .site-tagline {
+    font-size: 0.75rem;
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -956,7 +1115,7 @@ iframe{box-shadow: 5px 5px 9px 1px rgb(118, 118, 118);}
 
 .logo-wrap {
   position: relative;
-  margin-bottom: 80px;
+  margin-bottom: 180px;
 }
 
 .logo-overlay {
@@ -970,17 +1129,24 @@ iframe{box-shadow: 5px 5px 9px 1px rgb(118, 118, 118);}
 @media (max-width: 700px) {
   .logo-wrap {
     margin-bottom: 1rem;
+    margin-left: -2rem;
   }
 
   .logo-overlay {
     position: static;
-    margin-top: -11rem;
+    margin-top: -9.5rem;
+    margin-left: 1rem;
   }
 
   .logo-overlay svg {
     width: 100%;
     height: auto;
   }
+
+.tab-nav .container {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
 }
 
 /* ─── CONTACT FORM ──────────────────────────────────────────── */
@@ -1044,3 +1210,4 @@ iframe{box-shadow: 5px 5px 9px 1px rgb(118, 118, 118);}
   opacity: 0.6;
   transform: translateY(-1px);
 }
+

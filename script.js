@@ -33,8 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var params   = new URLSearchParams(window.location.search);
   var tabParam = params.get('tab');
   if (tabParam) {
-    switchTab(tabParam);
-  }
+  switchTab(tabParam);
+    } else {
+  switchTab('home');
+}
 
 });
 
@@ -165,3 +167,49 @@ window.addEventListener('scroll', function () {
     backToTop.classList.remove('visible');
   }
 });
+
+// ─── DARK MODE TOGGLE ────────────────────────────────────────
+var themeToggle = document.getElementById('theme-toggle');
+
+// Remember preference across pages
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-mode');
+  document.documentElement.classList.add('dark-mode');
+  themeToggle.innerHTML = '';
+}
+
+themeToggle.addEventListener('click', function () {
+  document.body.classList.toggle('dark-mode');
+  document.documentElement.classList.toggle('dark-mode');
+  var isDark = document.body.classList.contains('dark-mode');
+  themeToggle.innerHTML = '';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
+// ─── BACK LINK & SITE NAME CLICK ─────────────────────────────
+var backLink = document.querySelector('.back-link');
+if (backLink) {
+  backLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    var href = backLink.getAttribute('href');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+    window.location.href = href;
+  });
+}
+
+document.querySelector('.site-name').addEventListener('click', function(e) {
+  if (window.location.pathname === '/' || 
+      window.location.pathname.endsWith('index.html') ||
+      window.location.pathname === '/index.html') {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    switchTab('home');
+  } else {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  }
+});
+
