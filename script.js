@@ -213,3 +213,14 @@ document.querySelector('.site-name').addEventListener('click', function(e) {
   }
 });
 
+// ─── CONTACT FORM SUCCESS MESSAGE ────────────────────────────
+var params = new URLSearchParams(window.location.search);
+if (params.get('sent') === 'true') {
+  var successMsg = document.createElement('p');
+  successMsg.textContent = 'Thank you! Your message has been sent.';
+  successMsg.style.color = 'var(--color-accent)';
+  successMsg.style.marginTop = '1rem';
+  successMsg.style.fontFamily = 'var(--font-sans)';
+  var form = document.querySelector('.contact-form');
+  if (form) form.insertAdjacentElement('afterend', successMsg);
+}

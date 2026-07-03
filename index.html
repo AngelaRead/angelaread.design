@@ -67,20 +67,20 @@
   }
   .pencil-line {
     stroke-dasharray: 879;
-    animation: drawLine 2.6s linear forwards;
+    animation: drawLine 2.8s linear forwards;
     filter: drop-shadow(0 7px 2px rgba(0,0,0,0.25));
   }
   .pencil-line-flat {
     stroke-dasharray: 879;
-    animation: drawLine 2.6s linear forwards;
+    animation: drawLine 2.8s linear forwards;
   }
   .pencil-tip {
-    animation: movePencil 2.6s linear forwards;
+    animation: movePencil 2.8s linear forwards;
     filter: drop-shadow(0 7px 2px rgba(0,0,0,0.25));
   }
   .thin-line {
   stroke-dasharray: 879;
-  animation: drawLine 2.6s linear forwards;
+  animation: drawLine 2.8s linear forwards;
   filter: drop-shadow(0 4px 2px rgba(0,0,0,0.25));
 }
 </style>
@@ -421,6 +421,7 @@
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="6" placeholder="Your message..." required></textarea>
     </div>
+    <input type="hidden" name="_next" value="https://angelaread.design/?tab=contact&sent=true">
     <button type="submit" class="home-cta">Send Message</button>
   </form>
 </section>
