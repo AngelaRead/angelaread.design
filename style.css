@@ -750,7 +750,6 @@ img {
     font-size: 0.85rem;
     padding: 0.3rem 0.7rem;
   }
-}
 
   .tab-btn {
     padding: 0.65rem 0.875rem;
@@ -784,7 +783,7 @@ img {
     gap: 0.5rem;
   }
 
-   #theme-toggle {
+  #theme-toggle {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
